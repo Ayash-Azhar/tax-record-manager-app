@@ -34,6 +34,17 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthorization();
 
+// after app = builder.Build();
+app.UseHttpsRedirection();
+
+// apply your named CORS policy BEFORE MapControllers
+app.UseCors("AllowAllOrigins");
+
+app.UseAuthorization();
+app.MapControllers();
+app.Run();
+
+
 // Map controllers
 app.MapControllers();
 

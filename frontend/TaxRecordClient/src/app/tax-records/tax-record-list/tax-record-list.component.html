@@ -1,0 +1,39 @@
+<!-- <p>tax-record-list works!</p> -->
+
+
+<section>
+  <div class="row">
+    <h2>All Tax Records</h2>
+    <a routerLink="/new" class="btn">+ Add New</a>
+  </div>
+
+  <table *ngIf="records().length; else empty">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Tax Year</th>
+        <th>Income</th>
+        <th>Deductions</th>
+        <th>Net</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of records()">
+        <td><a [routerLink]="['/', r.id, 'edit']">{{ r.recordTitle }}</a></td>
+        <td>{{ r.taxYear }}</td>
+        <td>{{ r.incomeAmount | number:'1.2-2' }}</td>
+        <td>{{ r.deductionsAmount | number:'1.2-2' }}</td>
+        <td>{{ (r.incomeAmount - r.deductionsAmount) | number:'1.2-2' }}</td>
+        <td>
+          <a class="link" [routerLink]="['/', r.id, 'edit']">Edit</a> |
+          <button class="link danger" (click)="onDelete(r)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #empty>
+    <p>No records yet. <a routerLink="/new">Create one</a>.</p>
+  </ng-template>
+</section>
