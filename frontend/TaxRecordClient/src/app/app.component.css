@@ -1,0 +1,11 @@
+.header {
+  padding: 14px 18px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.brand { display:flex; align-items:center; gap:10px; }
+.logo { font-size: 22px; }
+h1 { margin:0; font-size: 18px; }
+
+.nav { display:flex; align-items:center; gap:14px; }
+.nav a { text-decoration:none; color: var(--text); padding:6px 8px; border-radius:8px; }
+.nav a.active { color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent); }
