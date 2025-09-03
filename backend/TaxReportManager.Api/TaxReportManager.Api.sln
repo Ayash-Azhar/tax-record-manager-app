@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36414.22 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxReportManager.Api", "TaxReportManager.Api\TaxReportManager.Api.csproj", "{A765EF3A-B6D7-4B58-992E-F1FD525591B6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A765EF3A-B6D7-4B58-992E-F1FD525591B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A765EF3A-B6D7-4B58-992E-F1FD525591B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A765EF3A-B6D7-4B58-992E-F1FD525591B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A765EF3A-B6D7-4B58-992E-F1FD525591B6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A2492FF-CE36-4542-BAD8-D824F5A81CE3}
+	EndGlobalSection
+EndGlobal
