@@ -1,14 +1,4 @@
-// import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'app-tax-record-form',
-//   imports: [],
-//   templateUrl: './tax-record-form.component.html',
-//   styleUrl: './tax-record-form.component.css'
-// })
-// export class TaxRecordFormComponent {
-
-// }
 
 
 import { Component, OnInit, inject, signal, computed } from '@angular/core';
@@ -34,14 +24,34 @@ export class TaxRecordFormComponent implements OnInit {
   id = signal<number | null>(null);
   isEdit = computed(() => this.id() !== null);
 
-  form = this.fb.group({
-    id: [0],
-    recordTitle: ['', Validators.required],
-    taxYear: [new Date().getFullYear(), Validators.required],
-    incomeAmount: [0, Validators.required],
-    deductionsAmount: [0, Validators.required],
-    notes: ['']
-  });
+
+form = this.fb.group({
+  id: [0],
+  recordTitle: ['', [Validators.required, Validators.maxLength(80)]],
+  taxYear: [new Date().getFullYear(), [
+    Validators.required,
+    Validators.min(1900),
+    Validators.max(new Date().getFullYear() + 1)
+  ]],
+  incomeAmount: [0, [Validators.required, Validators.min(0)]],
+  deductionsAmount: [0, [Validators.required, Validators.min(0)]],
+  notes: ['',[Validators.maxLength(500)]]
+}, { validators: [this.deductionsNotMoreThanIncome()] });
+
+private deductionsNotMoreThanIncome() {
+  return (group: any) => {
+    const income = +group.get('incomeAmount')?.value;
+    const ded = +group.get('deductionsAmount')?.value;
+    return ded <= income ? null : { dedTooHigh: true };
+  };
+}
+
+
+
+
+
+
+
 
   ngOnInit() {
     const idParam = this.route.snapshot.paramMap.get('id');
