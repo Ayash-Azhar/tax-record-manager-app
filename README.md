@@ -73,7 +73,7 @@ To run this project, you will need to add the following environment variables to
 
 
 ### Frontend Setup (Angular)
-cd frontend
+cd frontend/TaxRecordClient
 , npm install
 , ng serve -o
 
