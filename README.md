@@ -21,12 +21,6 @@ A simple, single-user web application for managing tax records. Built with **ASP
 
 
 
-## Features
-
-- Light/dark mode toggle
-- Live previews
-- Fullscreen mode
-- Cross platform
 
 ## Features
 - **View** all tax records on the home page.
