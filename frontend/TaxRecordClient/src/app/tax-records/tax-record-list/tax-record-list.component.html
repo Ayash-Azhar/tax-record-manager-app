@@ -26,7 +26,7 @@
           <td>{{ r.deductionsAmount | currency:'USD':'symbol':'1.0-2' }}</td>
           <td>{{ (r.incomeAmount - r.deductionsAmount) | currency:'USD':'symbol':'1.0-2' }}</td>
           <td class="actions">
-            <a class="link" [routerLink]="['/', r.id, 'edit']">Edit</a>
+            <a class="link" [routerLink]="['/', r.id, 'edit']">Edit/View</a>
             <button class="link-btn danger" (click)="onDelete(r)">Delete</button>
           </td>
         </tr>
