@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { TaxRecordServiceService } from './tax-record-service.service';
+import { TaxRecordService } from './tax-record-service.service';
 
 describe('TaxRecordServiceService', () => {
-  let service: TaxRecordServiceService;
+  let service: TaxRecordService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(TaxRecordServiceService);
+    service = TestBed.inject(TaxRecordService);
   });
 
   it('should be created', () => {
